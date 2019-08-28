@@ -17,9 +17,7 @@ public class Day2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        factorial();
-        System.out.println();
-        largestNumber();
+      pakape();
     }
 
     public static void stars() {
@@ -65,5 +63,31 @@ public class Day2 {
         }
         System.out.println("Lielakais skaitlis ir: " + newInput);
     }
+
+     public static void pakape1 () {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ievadi skaitli: ");
+            int skaitlis = sc.nextInt();
+        System.out.print("Ievadi pakapi: ");
+            int pakape = sc.nextInt();
+           System.out.println("Rezultats: " + (int)Math.pow(skaitlis, pakape));
+        }
+     
+     public static void pakape () {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ievadi skaitli: ");
+            int skaitlis = sc.nextInt();
+        System.out.print("Ievadi pakapi: ");
+            int pakape = sc.nextInt();
+            int result = 1;
+            for (int i = 1; i <= pakape; i++ ) {
+            result = result * skaitlis;
+            }
+            
+           System.out.println("Rezultats: " + result);
+        }
+             
+
+    
 
 }
