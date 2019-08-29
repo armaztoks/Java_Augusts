@@ -49,8 +49,11 @@ public class Day2 {
             fact = fact * i;
         }
         System.out.println("Faktarials ir: " + fact);
-    }
+        
+       
+        }
 
+  
     public static void largestNumber() {
         Scanner sc = new Scanner(System.in);
         int newInput = Integer.MIN_VALUE;
@@ -73,21 +76,32 @@ public class Day2 {
            System.out.println("Rezultats: " + (int)Math.pow(skaitlis, pakape));
         }
      
-     public static void pakape () {
-        Scanner sc = new Scanner(System.in);
+     public static void pakape() {
+            Scanner sc = new Scanner(System.in);
         System.out.print("Ievadi skaitli: ");
-            int skaitlis = sc.nextInt();
+            double skaitlis = sc.nextDouble();
         System.out.print("Ievadi pakapi: ");
-            int pakape = sc.nextInt();
-            int result = 1;
-            for (int i = 1; i <= pakape; i++ ) {
+            double pakape = sc.nextDouble();
+            double result = 1 ;
+            
+            if ( pakape >= 0){
+            for (double i = 1; i <= pakape; i++ ) {
             result = result * skaitlis;
             }
-            
            System.out.println("Rezultats: " + result);
-        }
-             
+            }
+           
+            if ( pakape < 0){
+            for (double i = 1; i <= pakape; i++ ) {
+            result = 1 / (result * skaitlis);
+            }
+           System.out.println("Rezultats: " + result);
+         }
+
+          
+    }
+}
+         
 
     
 
-}
