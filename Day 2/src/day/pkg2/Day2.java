@@ -82,7 +82,7 @@ public class Day2 {
             double skaitlis = sc.nextDouble();
         System.out.print("Ievadi pakapi: ");
             double pakape = sc.nextDouble();
-            double result = 1 ;
+            double result = 1;
             
             if ( pakape >= 0){
             for (double i = 1; i <= pakape; i++ ) {
@@ -91,16 +91,16 @@ public class Day2 {
            System.out.println("Rezultats: " + result);
             }
            
-            if ( pakape < 0){
+            else if ( pakape < 0){
             for (double i = 1; i <= pakape; i++ ) {
-            result = 1 / (result * skaitlis);
+            result = 1/(result * skaitlis);
             }
-           System.out.println("Rezultats: " + result);
-         }
-
-          
-    }
+             System.out.println("Rezultats: " + result);
+            }
+     
+        }         
 }
+
          
 
     
