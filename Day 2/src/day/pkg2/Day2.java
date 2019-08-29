@@ -17,7 +17,7 @@ public class Day2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      pakape();
+        pakape();
     }
 
     public static void stars() {
@@ -49,11 +49,9 @@ public class Day2 {
             fact = fact * i;
         }
         System.out.println("Faktarials ir: " + fact);
-        
-       
-        }
 
-  
+    }
+
     public static void largestNumber() {
         Scanner sc = new Scanner(System.in);
         int newInput = Integer.MIN_VALUE;
@@ -67,41 +65,34 @@ public class Day2 {
         System.out.println("Lielakais skaitlis ir: " + newInput);
     }
 
-     public static void pakape1 () {
+    public static void pakape1() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Ievadi skaitli: ");
-            int skaitlis = sc.nextInt();
+        int skaitlis = sc.nextInt();
         System.out.print("Ievadi pakapi: ");
-            int pakape = sc.nextInt();
-           System.out.println("Rezultats: " + (int)Math.pow(skaitlis, pakape));
-        }
-     
-     public static void pakape() {
-            Scanner sc = new Scanner(System.in);
+        int pakape = sc.nextInt();
+        System.out.println("Rezultats: " + (int) Math.pow(skaitlis, pakape));
+    }
+
+    public static void pakape() {
+        Scanner sc = new Scanner(System.in);
         System.out.print("Ievadi skaitli: ");
-            double skaitlis = sc.nextDouble();
+        double skaitlis = sc.nextDouble();
         System.out.print("Ievadi pakapi: ");
-            double pakape = sc.nextDouble();
-            double result = 1;
-            
-            if ( pakape >= 0){
-            for (double i = 1; i <= pakape; i++ ) {
-            result = result * skaitlis;
+        double pakape = sc.nextDouble();
+        double result = 1;
+
+        if (pakape >= 0) {
+            for (double i = 1; i <= pakape; i++) {
+                result = result * skaitlis;
             }
-           System.out.println("Rezultats: " + result);
+            System.out.println("Rezultats: " + result);
+        } else if (pakape < 0) {
+            for (double i = 1; i <= pakape; i++) {
+                result = 1 / (result * skaitlis);
             }
-           
-            else if ( pakape < 0){
-            for (double i = 1; i <= pakape; i++ ) {
-            result = 1/(result * skaitlis);
-            }
-             System.out.println("Rezultats: " + result);
-            }
-     
-        }         
+            System.out.println("Rezultats: " + result);
+        }
+
+    }
 }
-
-         
-
-    
-
