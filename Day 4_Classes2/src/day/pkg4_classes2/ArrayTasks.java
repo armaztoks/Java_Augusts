@@ -32,13 +32,16 @@ public class ArrayTasks {
 
     public static void sortArrey() {
         int[] arr = {7, 6, 3, 2, 9, 13};
-        //sakartot masivu augosa seciba
-        //izvadit
+        //izvadit  esoso masivu 
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
-
+        //sakartot masivu augosa seciba
+        for (int i = 0; i < arr.length-1; i++){
+        for ( int j = 0; j < arr.length-1-i; j++){
+        }
+        }
     }
 
     public static void sumOfElements() {
