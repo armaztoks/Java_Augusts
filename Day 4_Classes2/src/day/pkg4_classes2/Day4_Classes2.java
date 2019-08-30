@@ -23,6 +23,7 @@ public class Day4_Classes2 {
 
         ArrayTasks.switchPlaces();
         ArrayTasks.sumOfElements();
+        ArrayTasks.sortArrey();
     }
 
 }

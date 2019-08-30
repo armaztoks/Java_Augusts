@@ -32,9 +32,13 @@ public class ArrayTasks {
 
     public static void sortArrey() {
         int[] arr = {7, 6, 3, 2, 9, 13};
-
         //sakartot masivu augosa seciba
         //izvadit
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
     }
 
     public static void sumOfElements() {
@@ -42,19 +46,20 @@ public class ArrayTasks {
         int[] arr = new int[5];
         // elementu ievada cilveks
         Scanner sc = new Scanner(System.in);
-        arr [0] = 5; 
-        arr [1] = 3;
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             System.out.print("Ievadi skaitli: ");
-            arr [i] = sc.nextInt();
+            arr[i] = sc.nextInt();
             sum = sum + arr[i];
         }
-       // izvadit masivu
+        // izvadit masivu
+        // for (int i = 0; i < arr.length; i++) {
+        //System.out.print( arr [i] + "");
+
         System.out.println(Arrays.toString(arr));
-       
-       // izvadam elementu summu
-       System.out.println("Summa ir " + sum);
+
+        // izvadam elementu summu
+        System.out.println("Summa ir " + sum);
     }
 
 }
