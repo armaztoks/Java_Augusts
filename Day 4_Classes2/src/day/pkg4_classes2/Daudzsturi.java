@@ -15,10 +15,11 @@ public class Daudzsturi {
     private int maluSkaits; // privatais mainigais 
 
     public Daudzsturi() {
-        a = 0;
-        b = 0;
-        c = 0;
-        d = 0;
+        //Daudzsturi(double mala1, double mala2, double mala3, double mala4)
+        a = 0; // a = mala1
+        b = 0; // b = mala2
+        c = 0; // c = mala3
+        d = 0; // d = mala4
         maluSkaits = 0;
     } //konstruktors
 
@@ -26,21 +27,28 @@ public class Daudzsturi {
         maluSkaits = value;
     } //set metode malu skaitam
 
-    public void setManas(double mala1, double mala2, double mala3, double mala4) {
+    public void setMalas(double mala1, double mala2, double mala3,
+            double mala4) {
         a = mala1;
         b = mala2;
         c = mala3;
         d = mala4;
     } // set metode pierkir vertibu malam
 
+    public void setMalas(double mala1, double mala2, double mala3) {
+        a = mala1;
+        b = mala2;
+        c = mala3;
+    }
+
     // metode, kas aprekina perimetru un ar return atgriez
     public double getPerimetrs() {
-        
-        switch (maluSkaits){
+
+        switch (maluSkaits) {
             case 3:
                 return a + b + c;
             case 4:
-        return a + b + c +d;
+                return a + b + c + d;
             default:
                 return 0;
         }
