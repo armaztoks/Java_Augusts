@@ -6,6 +6,8 @@
 package calculator;
 
 import static calculator.MatematiskasDarbibas.cipars;
+import static calculator.MatematiskasDarbibas.kalkulacijas;
+import static calculator.MatematiskasDarbibas.matematiskaDarbiba;
 
 /**
  *
@@ -17,8 +19,11 @@ public class Calculator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    int skaitlisViens = cipars();
-    int skaitlisDivi = cipars();
+    double skaitlisViens = cipars();
+    double skaitlisDivi = cipars();
+    char darbiba = matematiskaDarbiba();
+   double rezultats = kalkulacijas(skaitlisViens,skaitlisDivi,darbiba);
+   System.out.println("Rezultats: " + rezultats);
    
     }
     
