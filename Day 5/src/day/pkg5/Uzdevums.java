@@ -29,19 +29,35 @@ public class Uzdevums {
             System.out.println("Ja velies turpinat, ievadi Ja. Ja ne - raksti exit");
             choice = sc.next();
 
+        if (choice.equalsIgnoreCase("ja")) {
+        }
+        else {
+        System.out.println("Ievadits nepareizi. Megini velreiz!");
+        System.out.println("Ja velies turpinat, ievadi Ja. Ja ne - raksti exit");
+            choice = sc.next();
+        }
+        
         } while (!choice.equalsIgnoreCase("exit"));
 
         do {
             System.out.println("Vai velies izdzest elementu? ja/ne");
             choice = sc.next();
-
+         if (choice.equalsIgnoreCase("ja")) {
             System.out.println("Ievadi saraksta elementu, kuru gribi izdzest!");
             int input = sc.nextInt();
-            
-            
+            if (input >= 0 && input < listOfStrings.size()) {
             listOfStrings.remove(input);
             System.out.println("Tavas vertibas saraksta ir: " + listOfStrings);
-            
+            }
+            else {
+            System.out.println("Tads elements neeksiste!" );
+            }
+         }
+         else {
+        System.out.println("Ievadits nepareizi. Megini velreiz!");
+        System.out.println("Vai velies izdzest elementu? ja/ne");
+            choice = sc.next();
+         }
         } while (!choice.equalsIgnoreCase("ne"));
 
     }
