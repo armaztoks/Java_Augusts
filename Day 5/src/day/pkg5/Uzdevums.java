@@ -37,6 +37,8 @@ public class Uzdevums {
 
             System.out.println("Ievadi saraksta elementu, kuru gribi izdzest!");
             int input = sc.nextInt();
+            
+            
             listOfStrings.remove(input);
             System.out.println("Tavas vertibas saraksta ir: " + listOfStrings);
             
