@@ -30,7 +30,7 @@ public class ArrayTasks {
 
     }
 
-    public static void sortArrey() {
+    public static void sortArray() {
         int[] arr = {7, 6, 3, 2, 9, 13};
         //izvadit  esoso masivu 
         for (int i = 0; i < arr.length; i++) {
@@ -38,10 +38,22 @@ public class ArrayTasks {
         }
         System.out.println();
         //sakartot masivu augosa seciba
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - 1 - i; j++) {
+        for (int i = 0; i < arr.length-1; i++) {
+            for (int j = 0; j < arr.length-1-i; j++) {
+               
+                if (arr[j] > arr[j+1]) { //2367913 ja < tad 13 9 7 6 3 2 
+                    int swap = arr[j];   
+                    arr[j] = arr[j+1];
+                    arr[j+1] = swap;
+                }
             }
         }
+       // izvadit jaunu masivu
+       for (int i = 0; i< arr.length; i++) {
+            System.out.print(arr[i] + " ");
+            
+       }
+    
     }
 
     public static void sumOfElements() {
