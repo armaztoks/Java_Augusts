@@ -41,7 +41,7 @@ public class ArrayTasks {
         for (int i = 0; i < arr.length-1; i++) {
             for (int j = 0; j < arr.length-1-i; j++) {
                
-                if (arr[j] > arr[j+1]) { //2367913 ja < tad 13 9 7 6 3 2 
+                if (arr[j] > arr[j+1]) { //2 3 6 7 9 13 ja < tad 13 9 7 6 3 2 
                     int swap = arr[j];   
                     arr[j] = arr[j+1];
                     arr[j+1] = swap;
