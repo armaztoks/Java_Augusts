@@ -34,18 +34,17 @@ public class Uzdevums {
         do {
             System.out.println("Vai velies izdzest elementu? ja/ne");
             choice = sc.next();
-         if (choice.equalsIgnoreCase("ja")) {
-            System.out.println("Ievadi saraksta elementu, kuru gribi izdzest!"
-                    + " Tavs elementu saraksts ir " + listOfStrings);
-            int input = sc.nextInt();
-            if (input >= 0 && input < listOfStrings.size()) {
-            listOfStrings.remove(input);
-            System.out.println("Tavas vertibas saraksta ir: " + listOfStrings);
+            if (choice.equalsIgnoreCase("ja")) {
+                System.out.println("Ievadi saraksta elementu, kuru gribi izdzest!"
+                        + " Tavs elementu saraksts ir " + listOfStrings);
+                int input = sc.nextInt();
+                if (input >= 0 && input < listOfStrings.size()) {
+                    listOfStrings.remove(input);
+                    System.out.println("Tavas vertibas saraksta ir: " + listOfStrings);
+                } else {
+                    System.out.println("Tads elements neeksiste!");
+                }
             }
-            else {
-            System.out.println("Tads elements neeksiste!" );
-            }
-         }
         } while (!choice.equalsIgnoreCase("ne"));
 
     }
