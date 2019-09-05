@@ -15,7 +15,24 @@ public class Day7 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       examples();
+    }
+    
+    public static void examples (){
+    
+     //exeptions
+     
+     int [] arr = new int [5];
+     
+     try {
+     for (int i = 0; i < 8; i++){
+     arr[i] = i + 1;
+         System.out.println(arr[i]);
+     }
+     
+     } catch(Exception ex){
+         System.out.println(ex.toString()); // "Nokeram"
+     }
     }
     
 }
