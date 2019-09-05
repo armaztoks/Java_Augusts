@@ -19,17 +19,13 @@ public class examples {
         sampleList.add("divi");
         sampleList.add("tris");
         sampleList.add("cetri");
-        
-        
 
         int sampleInt = 5;
         sampleInt = changeInt(sampleInt);
         System.out.println("Arpus metodes- " + sampleInt);
-        
-        
-        
+
         outputList(sampleList);
-        
+
         changeList(sampleList);
         outputList(sampleList);
         
