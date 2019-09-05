@@ -18,7 +18,7 @@ public class Day7 {
      */
     public static void main(String[] args) {
         //examples();
-        uzdevums();
+        taskException();
     }
 
     public static void examples() {
@@ -37,36 +37,56 @@ public class Day7 {
         }
     }
 
-    public static void uzdevums() {
+   //Uztaisit metodi, kur cilveks ievada masiva garumu
+    //Ar ciklu aizpildam masivu ar vertibam
+    //tad cilveks ievada, kuru elementu mes mainam
+    //tad izvadam masivu
+    public static void taskException() {
         Scanner sc = new Scanner(System.in);
-        int choice;
-        System.out.print("Ievadi masiva garumu: ");
-        choice = sc.nextInt();
-        int[] arr = new int[choice];
+        System.out.println("Ievadiet masiva garumu");
+        int[] arr;
+        int arrLength;
 
         try {
-            for (int i = 0; i < 10000; i++) {
-                arr[i] = i + 1;
-                System.out.println(arr[i]);
-            }
-
+            arrLength = sc.nextInt();
+            arr = new int[arrLength];
         } catch (Exception ex) {
-            System.out.println("Viss OK");
+            System.out.println("Nepareiza ievade, masivam pieskirts garums"
+                    + "pec noklusejuma- 5");
+            arrLength = 5;
+            arr = new int[arrLength];
         }
 
-        System.out.print("Ievadi elementu, kuru velies mainit: ");
-        int indexToEdit = sc.nextInt();
-
-        System.out.println("Ievadiet jauno vertibu!");
-        int indexNew = sc.nextInt();
-
-        if (indexToEdit >= 0 && indexToEdit < arr.length) {
-            arr.set(indexToEdit, indexNew);
-            System.out.println("Tavas vertibas saraksta ir: " + arr);
-        } else {
-            System.out.println("Tads elements neeksiste!");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i;
         }
+
+        arrPrint(arr);
+        System.out.println("");
+        System.out.println("Ievadiet indeksu, kuru gribast izmainit");
+
+        try {
+            int index = sc.nextInt();
+
+            System.out.println("Ievadiet vertibu!");
+
+            int value = sc.nextInt();
+
+            arr[index] = value;
+        }catch(Exception ex){
+            System.out.println("Nepareiza indeksa ievade");
+        }
+
+        arrPrint(arr);
 
     }
 
+    private static void arrPrint(int[] arr) {
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+    }
 }
