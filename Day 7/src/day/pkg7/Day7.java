@@ -3,22 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package day.pkg6;
+package day.pkg7;
 
 /**
  *
  * @author Viktorija
  */
-public class Day6 {
+public class Day7 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      // examples.referenceSample();
-      
-      tasks tsk = new tasks ();
-      tsk.menu();
+        // TODO code application logic here
     }
     
 }
