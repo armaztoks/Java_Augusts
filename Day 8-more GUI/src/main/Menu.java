@@ -19,9 +19,10 @@ public class Menu extends javax.swing.JFrame {
     private boolean stateBtnBlue = true;
     private boolean stateBtnRed = true;
     private boolean stateBtnGreen = true;
-    
+
     public Menu() {
         initComponents();
+        changeColour();
     }
 
     /**
@@ -99,44 +100,67 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBlueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBlueActionPerformed
-        if(stateBtnBlue){
+        if (stateBtnBlue) {
             btnBlue.setBackground(Color.blue);
-            btnBlue.setForeground(Color.black);     
+            btnBlue.setForeground(Color.black);
             btnNew.setBackground(Color.blue);
-        }else{
+        } else {
             btnBlue.setBackground(Color.gray);
-            btnBlue.setForeground(Color.yellow);
         }
-        
         stateBtnBlue = !stateBtnBlue;
+        
+
     }//GEN-LAST:event_btnBlueActionPerformed
 
     private void btnRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedActionPerformed
-        if(stateBtnRed){
+        if (stateBtnRed) {
             btnRed.setBackground(Color.red);
-            btnRed.setForeground(Color.black); 
+            btnRed.setForeground(Color.black);
             btnNew.setBackground(Color.red);
-        }else{
-           btnRed.setBackground(Color.GRAY);
-           btnRed.setForeground(Color.YELLOW);
+        } else {
+            btnRed.setBackground(Color.GRAY);
+            btnRed.setForeground(Color.YELLOW);
         }
-        
         stateBtnRed = !stateBtnRed;
         
+
+
     }//GEN-LAST:event_btnRedActionPerformed
 
     private void btnGreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGreenActionPerformed
-        if(stateBtnGreen){
+        if (stateBtnGreen) {
             btnGreen.setBackground(Color.green);
             btnGreen.setForeground(Color.black);
             btnNew.setBackground(Color.green);
-        }else{
+        } else {
             btnGreen.setBackground(Color.gray);
             btnGreen.setForeground(Color.yellow);
         }
-        
         stateBtnGreen = !stateBtnGreen;
+       
+
     }//GEN-LAST:event_btnGreenActionPerformed
+
+    private void changeColour() {
+        if (stateBtnGreen && stateBtnRed) {
+            btnNew.setBackground(Color.yellow);
+        }
+        if (stateBtnGreen && stateBtnBlue) {
+            btnNew.setBackground(Color.cyan);
+        }
+        if (stateBtnRed && stateBtnBlue) {
+            btnNew.setBackground(Color.magenta);
+        }
+        if (stateBtnRed && stateBtnBlue && stateBtnBlue) {
+            btnNew.setBackground(Color.white);
+        }
+        else {
+        btnNew.setBackground(Color.gray);
+        }
+        stateBtnGreen = !stateBtnGreen;
+        stateBtnRed = !stateBtnRed;
+        stateBtnBlue = !stateBtnBlue;
+    }
 
     /**
      * @param args the command line arguments
@@ -171,8 +195,7 @@ public class Menu extends javax.swing.JFrame {
                 new Menu().setVisible(true);
             }
         });
-   
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
