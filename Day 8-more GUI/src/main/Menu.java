@@ -22,7 +22,7 @@ public class Menu extends javax.swing.JFrame {
 
     public Menu() {
         initComponents();
-        changeColour();
+
     }
 
     /**
@@ -103,12 +103,14 @@ public class Menu extends javax.swing.JFrame {
         if (stateBtnBlue) {
             btnBlue.setBackground(Color.blue);
             btnBlue.setForeground(Color.black);
-            btnNew.setBackground(Color.blue);
+         
         } else {
+            
             btnBlue.setBackground(Color.gray);
+            btnBlue.setForeground(Color.yellow);
         }
         stateBtnBlue = !stateBtnBlue;
-        
+        changeColour();
 
     }//GEN-LAST:event_btnBlueActionPerformed
 
@@ -116,13 +118,13 @@ public class Menu extends javax.swing.JFrame {
         if (stateBtnRed) {
             btnRed.setBackground(Color.red);
             btnRed.setForeground(Color.black);
-            btnNew.setBackground(Color.red);
         } else {
             btnRed.setBackground(Color.GRAY);
             btnRed.setForeground(Color.YELLOW);
         }
+
         stateBtnRed = !stateBtnRed;
-        
+        changeColour();
 
 
     }//GEN-LAST:event_btnRedActionPerformed
@@ -131,35 +133,45 @@ public class Menu extends javax.swing.JFrame {
         if (stateBtnGreen) {
             btnGreen.setBackground(Color.green);
             btnGreen.setForeground(Color.black);
-            btnNew.setBackground(Color.green);
         } else {
             btnGreen.setBackground(Color.gray);
             btnGreen.setForeground(Color.yellow);
         }
         stateBtnGreen = !stateBtnGreen;
-       
+        changeColour();
 
     }//GEN-LAST:event_btnGreenActionPerformed
 
     private void changeColour() {
-        if (stateBtnGreen && stateBtnRed) {
+        if (!stateBtnGreen && !stateBtnRed && stateBtnBlue) {
             btnNew.setBackground(Color.yellow);
         }
-        if (stateBtnGreen && stateBtnBlue) {
+
+        if (!stateBtnGreen && !stateBtnBlue && stateBtnRed) {
             btnNew.setBackground(Color.cyan);
         }
-        if (stateBtnRed && stateBtnBlue) {
+        if (!stateBtnRed && !stateBtnBlue && stateBtnGreen) {
             btnNew.setBackground(Color.magenta);
         }
-        if (stateBtnRed && stateBtnBlue && stateBtnBlue) {
+
+        if (!stateBtnRed && !stateBtnGreen && !stateBtnBlue) {
             btnNew.setBackground(Color.white);
         }
-        else {
-        btnNew.setBackground(Color.gray);
+
+        if (stateBtnRed && stateBtnGreen && stateBtnBlue) {
+            btnNew.setBackground(Color.gray);
         }
-        stateBtnGreen = !stateBtnGreen;
-        stateBtnRed = !stateBtnRed;
-        stateBtnBlue = !stateBtnBlue;
+        
+        if (stateBtnGreen && stateBtnRed && !stateBtnBlue) {
+            btnNew.setBackground(Color.blue);
+        }
+        
+        if (stateBtnGreen && !stateBtnRed && stateBtnBlue) {
+            btnNew.setBackground(Color.red);
+        }
+        if (!stateBtnGreen && stateBtnRed && stateBtnBlue) {
+            btnNew.setBackground(Color.green);
+        }
     }
 
     /**
@@ -193,6 +205,7 @@ public class Menu extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Menu().setVisible(true);
+
             }
         });
 
