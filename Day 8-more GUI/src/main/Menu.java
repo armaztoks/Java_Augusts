@@ -38,6 +38,8 @@ public class Menu extends javax.swing.JFrame {
         btnGreen = new javax.swing.JButton();
         btnBlue = new javax.swing.JButton();
         btnNew = new javax.swing.JButton();
+        txtIevade = new javax.swing.JTextField();
+        btnForText = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,20 +69,31 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        btnForText.setText("OK");
+        btnForText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnForTextActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnNew, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(btnRed, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnGreen, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addComponent(btnBlue, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnBlue, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(txtIevade, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnForText)))
                 .addContainerGap(187, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -91,9 +104,13 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btnRed, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                     .addComponent(btnBlue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGreen, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
-                .addGap(62, 62, 62)
+                .addGap(18, 18, 18)
                 .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnForText)
+                    .addComponent(txtIevade))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         pack();
@@ -103,9 +120,9 @@ public class Menu extends javax.swing.JFrame {
         if (stateBtnBlue) {
             btnBlue.setBackground(Color.blue);
             btnBlue.setForeground(Color.black);
-         
+
         } else {
-            
+
             btnBlue.setBackground(Color.gray);
             btnBlue.setForeground(Color.yellow);
         }
@@ -142,6 +159,40 @@ public class Menu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnGreenActionPerformed
 
+    private void btnForTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForTextActionPerformed
+        int a = Integer.parseInt(txtIevade.getText());
+
+        switch (a) {
+            case 1:
+                btnNew.setBackground(Color.red);
+                break;
+            case 2:
+                btnNew.setBackground(Color.green);
+                break;
+            case 3:
+                btnNew.setBackground(Color.blue);
+                break;
+            case 4:
+                btnNew.setBackground(Color.yellow);
+                break;
+            case 5:
+                btnNew.setBackground(Color.cyan);
+                break;
+            case 6:
+                btnNew.setBackground(Color.magenta);
+                break;
+            case 7:
+                btnNew.setBackground(Color.white);
+                break;
+            case 8:
+                btnNew.setBackground(Color.gray);
+                break;
+            default:
+                btnNew.setBackground(Color.gray);
+        }
+
+    }//GEN-LAST:event_btnForTextActionPerformed
+
     private void changeColour() {
         if (!stateBtnGreen && !stateBtnRed && stateBtnBlue) {
             btnNew.setBackground(Color.yellow);
@@ -161,11 +212,11 @@ public class Menu extends javax.swing.JFrame {
         if (stateBtnRed && stateBtnGreen && stateBtnBlue) {
             btnNew.setBackground(Color.gray);
         }
-        
+
         if (stateBtnGreen && stateBtnRed && !stateBtnBlue) {
             btnNew.setBackground(Color.blue);
         }
-        
+
         if (stateBtnGreen && !stateBtnRed && stateBtnBlue) {
             btnNew.setBackground(Color.red);
         }
@@ -213,9 +264,11 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBlue;
+    private javax.swing.JButton btnForText;
     private javax.swing.JButton btnGreen;
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnRed;
+    private javax.swing.JTextField txtIevade;
     // End of variables declaration//GEN-END:variables
 
 }
