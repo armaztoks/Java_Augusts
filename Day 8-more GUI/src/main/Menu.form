@@ -102,6 +102,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnNew">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtIevade">
     </Component>

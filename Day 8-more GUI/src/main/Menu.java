@@ -69,6 +69,12 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        btnNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewActionPerformed(evt);
+            }
+        });
+
         btnForText.setText("OK");
         btnForText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,6 +199,20 @@ public class Menu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnForTextActionPerformed
 
+
+    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
+        btnRed.setBackground(Color.gray);
+        stateBtnRed = true;
+
+        btnGreen.setBackground(Color.gray);
+        stateBtnGreen = true;
+
+        btnBlue.setBackground(Color.gray);
+        stateBtnBlue = true;
+
+        btnNew.setBackground(Color.gray);
+    }//GEN-LAST:event_btnNewActionPerformed
+
     private void changeColour() {
         if (!stateBtnGreen && !stateBtnRed && stateBtnBlue) {
             btnNew.setBackground(Color.yellow);
@@ -223,6 +243,13 @@ public class Menu extends javax.swing.JFrame {
         if (!stateBtnGreen && stateBtnRed && stateBtnBlue) {
             btnNew.setBackground(Color.green);
         }
+        differentMixStateChange();
+    }
+
+    private void differentMixStateChange() {
+        String result = String.valueOf(stateBtnRed) + String.valueOf(stateBtnGreen) + 
+                String.valueOf(stateBtnBlue); 
+        System.out.println(result);
     }
 
     /**
