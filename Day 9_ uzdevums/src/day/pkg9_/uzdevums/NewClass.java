@@ -44,6 +44,7 @@ public class NewClass {
                     break;
                 case "2":
                     addToList();
+                    saveFile(true);
                     break;
                 case "3":
                     deleteFromList();
@@ -55,7 +56,7 @@ public class NewClass {
                     fileReader();
                     break;
                 case "6":
-                    saveFile();
+                    saveFile(false);
                     break;
                 case "exit":
                     break;
@@ -146,10 +147,10 @@ public class NewClass {
         }
     }
 
-    public void saveFile() {
+    public void saveFile(boolean append) {
 
         try (FileWriter writer = new FileWriter("C:\\Users\\Viktorija\\"
-                + "Documents\\GitHub\\Java_Augusts\\Day 9_FileIOexample\\text.txt", false);
+                + "Documents\\GitHub\\Java_Augusts\\Day 9_FileIOexample\\text.txt", append);
                 BufferedWriter bw = new BufferedWriter(writer)) {
             for (int i = 0; i < nameList.size(); i++) {
                 bw.write(nameList.get(i));
