@@ -55,7 +55,7 @@ public class NewClass {
                     fileReader();
                     break;
                 case "6":
-                    fileWrite();
+                    saveFile();
                     break;
                 case "exit":
                     break;
@@ -128,9 +128,10 @@ public class NewClass {
         return index;
     }
 
-    public static void fileReader() {
+    public void fileReader() {
 
-        try (FileReader fr = new FileReader("C:\\Users\\Viktorija\\Documents\\GitHub\\Java_Augusts\\Day 9_FileIOexample\\text.txt");
+        try (FileReader fr = new FileReader("C:\\Users\\Viktorija\\Documents\\GitHub\\"
+                + "Java_Augusts\\Day 9_FileIOexample\\text.txt");
                 BufferedReader br = new BufferedReader(fr)) {
             while (true) {
                 String line = br.readLine();
@@ -138,15 +139,17 @@ public class NewClass {
                     break;
                 }
                 System.out.println(line);
+                nameList.add(line);
             }
         } catch (IOException ex) {
             System.out.println("Nevar izveidot failu!");
         }
     }
 
-    public void fileWrite() {
-        
-        try (FileWriter writer = new FileWriter("C:\\Users\\Viktorija\\Documents\\GitHub\\Java_Augusts\\Day 9_FileIOexample\\text.txt");
+    public void saveFile() {
+
+        try (FileWriter writer = new FileWriter("C:\\Users\\Viktorija\\"
+                + "Documents\\GitHub\\Java_Augusts\\Day 9_FileIOexample\\text.txt", false);
                 BufferedWriter bw = new BufferedWriter(writer)) {
             for (int i = 0; i < nameList.size(); i++) {
                 bw.write(nameList.get(i));
