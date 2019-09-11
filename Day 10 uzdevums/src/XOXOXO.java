@@ -9,13 +9,76 @@
  * @author Viktorija
  */
 public class XOXOXO extends javax.swing.JFrame {
-
-    int click = 2;
-    int clickUsed [] = {0,0,0,0,0,0,0,0,0};
-    int winner1 [] = {0,0,0,0,0,0,0,0,0};
-    int winner2 [] = {0,0,0,0,0,0,0,0,0};
     
-
+    int click = 2;
+    int clickUsed[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int winner1[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int winner2[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+    
+    boolean firstClick = true;
+    
+    int winner1() {
+        
+        if (winner1[0] == 1 && winner1[1] == 1 && winner1[2] == 1) {
+            return 1;
+        }
+        
+        if (winner1[3] == 1 && winner1[4] == 1 && winner1[5] == 1) {
+            return 1;
+        }
+        
+        if (winner1[6] == 1 && winner1[7] == 1 && winner1[8] == 1) {
+            return 1;
+        }
+        if (winner1[0] == 1 && winner1[3] == 1 && winner1[6] == 1) {
+            return 1;
+        }
+        if (winner1[1] == 1 && winner1[4] == 1 && winner1[7] == 1) {
+            return 1;
+        }
+        if (winner1[2] == 1 && winner1[5] == 1 && winner1[8] == 1) {
+            return 1;
+        }
+        if (winner1[0] == 1 && winner1[4] == 1 && winner1[8] == 1) {
+            return 1;
+        }
+        if (winner1[2] == 1 && winner1[4] == 1 && winner1[6] == 1) {
+            return 1;
+        }
+        return 0;
+    }
+    
+    int winner2() {
+        
+        if (winner2[0] == 1 && winner2[1] == 1 && winner2[2] == 1) {
+            return 1;
+        }
+        
+        if (winner2[3] == 1 && winner2[4] == 1 && winner2[5] == 1) {
+            return 1;
+        }
+        
+        if (winner2[6] == 1 && winner2[7] == 1 && winner2[8] == 1) {
+            return 1;
+        }
+        if (winner2[0] == 1 && winner2[3] == 1 && winner2[6] == 1) {
+            return 1;
+        }
+        if (winner2[1] == 1 && winner2[4] == 1 && winner2[7] == 1) {
+            return 1;
+        }
+        if (winner2[2] == 1 && winner2[5] == 1 && winner2[8] == 1) {
+            return 1;
+        }
+        if (winner2[0] == 1 && winner2[4] == 1 && winner2[8] == 1) {
+            return 1;
+        }
+        if (winner2[2] == 1 && winner2[4] == 1 && winner2[6] == 1) {
+            return 1;
+        }
+        return 0;
+    }
+    
     public XOXOXO() {
         initComponents();
     }
@@ -40,6 +103,7 @@ public class XOXOXO extends javax.swing.JFrame {
         btn9 = new javax.swing.JButton();
         btnAgain = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        txtResult = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +174,8 @@ public class XOXOXO extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jTextField1.setText("Once for X, twice for O");
 
+        txtResult.setToolTipText("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,14 +207,16 @@ public class XOXOXO extends javax.swing.JFrame {
                         .addContainerGap(47, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(137, 137, 137)))
-                .addComponent(btnAgain, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAgain, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(txtResult))
                 .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
@@ -159,7 +227,10 @@ public class XOXOXO extends javax.swing.JFrame {
                             .addComponent(btn4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn5, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
                             .addComponent(btn6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(btnAgain, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtResult, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAgain, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -179,143 +250,215 @@ public class XOXOXO extends javax.swing.JFrame {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         if (click % 2 == 0) {
-
+            
             click++;
             btn1.setText("X");
-            clickUsed [0]=1;
-            winner1 [0] =1;
+            clickUsed[0] = 1;
+            winner1[0] = 1;
             
-
+            int win1 = winner1();
+            int win2 = winner2();
+            
+            if (win1 == 1) {
+                txtResult.setText("Pirmais speletais uzvareja!");
+            } else if (win2 == 1) {
+                txtResult.setText("Otrais speletais uzvareja!");
+            }
+            
         } else {
             click++;
             btn1.setText("O");
             clickUsed[0] = 1;
-            winner1 [0] =1;        
+            winner1[0] = 1;
         }
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         if (click % 2 == 0) {
-
+            
             click++;
             btn3.setText("X");
-            clickUsed [2]=1;
-            winner1 [2] =1;
+            clickUsed[2] = 1;
+            winner1[2] = 1;
+            int win1 = winner1();
+            int win2 = winner2();
+            
+            if (win1 == 1) {
+                txtResult.setText("Pirmais speletais uzvareja!");
+            } else if (win2 == 1) {
+                txtResult.setText("Otrais speletais uzvareja!");
+            }
         } else {
             click++;
             btn3.setText("O");
-            clickUsed [2]=1;
-            winner2 [2] =1;
+            clickUsed[2] = 1;
+            winner2[2] = 1;
         }
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
         if (click % 2 == 0) {
-
+            
             click++;
             btn9.setText("X");
-            clickUsed [8]=1;
-            winner1 [8] =1;
+            clickUsed[8] = 1;
+            winner1[8] = 1;
+            int win1 = winner1();
+            int win2 = winner2();
+            
+            if (win1 == 1) {
+                txtResult.setText("Pirmais speletais uzvareja!");
+            } else if (win2 == 1) {
+                txtResult.setText("Otrais speletais uzvareja!");
+            }
         } else {
             click++;
             btn9.setText("O");
-            clickUsed [8]=1;
-            winner2 [8] =1;
+            clickUsed[8] = 1;
+            winner2[8] = 1;
         }
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         if (click % 2 == 0) {
-
+            
             click++;
             btn2.setText("X");
-            clickUsed [1]=1;
-            winner1 [1] =1;
+            clickUsed[1] = 1;
+            winner1[1] = 1;
+            int win1 = winner1();
+            int win2 = winner2();
+            
+            if (win1 == 1) {
+                txtResult.setText("Pirmais speletais uzvareja!");
+            } else if (win2 == 1) {
+                txtResult.setText("Otrais speletais uzvareja!");
+            }
         } else {
             click++;
             btn2.setText("O");
-            clickUsed [1]=1;
-            winner2 [1] =1;
+            clickUsed[1] = 1;
+            winner2[1] = 1;
         }
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
         if (click % 2 == 0) {
-
+            
             click++;
             btn4.setText("X");
-            clickUsed [3]=1;
-            winner1 [3] =1;
+            clickUsed[3] = 1;
+            winner1[3] = 1;
+            int win1 = winner1();
+            int win2 = winner2();
+            
+            if (win1 == 1) {
+                txtResult.setText("Pirmais speletais uzvareja!");
+            } else if (win2 == 1) {
+                txtResult.setText("Otrais speletais uzvareja!");
+            }
         } else {
             click++;
             btn4.setText("O");
-            clickUsed [3]=1;
-            winner2 [3] =1;
+            clickUsed[3] = 1;
+            winner2[3] = 1;
         }
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
         if (click % 2 == 0) {
-
+            
             click++;
             btn5.setText("X");
-            clickUsed [4]=1;
-            winner1 [4] =1;
+            clickUsed[4] = 1;
+            winner1[4] = 1;
+            int win1 = winner1();
+            int win2 = winner2();
+            
+            if (win1 == 1) {
+                txtResult.setText("Pirmais speletais uzvareja!");
+            } else if (win2 == 1) {
+                txtResult.setText("Otrais speletais uzvareja!");
+            }
         } else {
             click++;
             btn5.setText("O");
-            clickUsed [4]=1;
-            winner2 [4] =1;
+            clickUsed[4] = 1;
+            winner2[4] = 1;
         }
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
         if (click % 2 == 0) {
-
+            
             click++;
             btn6.setText("X");
-            clickUsed [5]=1;
-            winner1 [5] =1;
+            clickUsed[5] = 1;
+            winner1[5] = 1;
         } else {
             click++;
             btn6.setText("O");
-            clickUsed [5]=1;
-            winner2 [5] =1;
+            clickUsed[5] = 1;
+            winner2[5] = 1;
         }
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
         if (click % 2 == 0) {
-
             click++;
             btn7.setText("X");
-            clickUsed [6]=1;
-            winner1 [6] =1;
+            clickUsed[6] = 1;
+            winner1[6] = 1;
+            int win1 = winner1();
+            int win2 = winner2();
+            
+            if (win1 == 1) {
+                txtResult.setText("Pirmais speletais uzvareja!");
+            } else if (win2 == 1) {
+                txtResult.setText("Otrais speletais uzvareja!");
+            }
         } else {
             click++;
             btn7.setText("O");
-            clickUsed [6]=1;
-            winner2 [6] =1;
+            clickUsed[6] = 1;
+            winner2[6] = 1;
         }
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
         if (click % 2 == 0) {
-
+            
             click++;
             btn8.setText("X");
-            clickUsed [7]=1;
-            winner1 [7] =1;
+            clickUsed[7] = 1;
+            winner1[7] = 1;
+            int win1 = winner1();
+            int win2 = winner2();
+            
+            if (win1 == 1) {
+                txtResult.setText("Pirmais speletais uzvareja!");
+            } else if (win2 == 1) {
+                txtResult.setText("Otrais speletais uzvareja!");
+            }
         } else {
             click++;
             btn8.setText("O");
-            clickUsed [7]=1;
-            winner2 [7] =1;
+            clickUsed[7] = 1;
+            winner2[7] = 1;
         }
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btnAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgainActionPerformed
-
+        btn1.setText("");
+        btn2.setText("");
+        btn3.setText("");
+        btn4.setText("");
+        btn5.setText("");
+        btn6.setText("");
+        btn7.setText("");
+        btn8.setText("");
+        btn9.setText("");
+        txtResult.setText("");
     }//GEN-LAST:event_btnAgainActionPerformed
 
     /**
@@ -365,5 +508,6 @@ public class XOXOXO extends javax.swing.JFrame {
     private javax.swing.JButton btn9;
     private javax.swing.JButton btnAgain;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtResult;
     // End of variables declaration//GEN-END:variables
 }
